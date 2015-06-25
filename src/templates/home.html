@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{{title}}
+
+
+{% block jumbo %}
+        <div class="jumbotron">
+                <h1>Quotes Blog</h1>
+                <p>Quotes blog. Post, like, save, comment, share and follow</p>
+                <p>
+                  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join us &raquo;</a>
+                </p>
+              </div>
+{% endblock %}
+
+
+
+{% block content %}
+        <div class="row">
+
+            <div class="col-md-3">
+        <form method="POST", action="">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-lg btn-primary" type="submit" value="Apply for newsletter">
+        </form>
+                </div>
+            </div>
+{% endblock %}
+
+
+</body>
+</html>

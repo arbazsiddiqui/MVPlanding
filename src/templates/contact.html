@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{{title}}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <form method="POST", action="">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input class="btn btn-lg btn-primary" type="submit" value="Contact">
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>
